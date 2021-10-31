@@ -38,3 +38,36 @@ class User(models.Model):
     email = models.EmailField(max_length=30,null=True)
     neighbourhood = models.ForeignKey(NeighbourHood, on_delete=CASCADE, null=True)
 
+
+    def __str__(self):
+        return self.name()
+
+    def save_user(self):
+        self.save()
+
+    def delete_user(self):
+        self.delete()
+
+class Business(models.Model):
+    name = models.CharField(max_length=30)
+    user = models.ForeignKey(User, on_delete=CASCADE, null=True)
+    neighbourhood = models.ForeignKey(NeighbourHood, on_delete=CASCADE, null=True)
+    email = models.EmailField(max_length=30, null=True)
+
+    def __str__(self):
+        return self.name
+
+    def create_business(self):
+        pass
+
+    def update_business(self):
+        pass
+
+    def search_business(self):
+        pass
+
+    def delete_business(self):
+        self.delete()
+    
+
+
