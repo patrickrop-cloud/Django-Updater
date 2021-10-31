@@ -11,3 +11,6 @@ class Admin(models.Model):
     def save_admin(self):
         self.save()
 
+    def delete_admin(self):
+        self.delete()
+
