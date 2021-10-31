@@ -20,3 +20,14 @@ class NeighbourHood(models.Model):
     admin = models.ForeignKey(Admin, on_delete=CASCADE, null=True)
     occupants_count = models.IntegerField(default=0, null=False)
 
+    def __str__(self):
+        return self.name
+
+    def create_neighbourhood(self):
+        pass
+    
+    def update_neighbourhood(self):
+        pass
+
+    def delete_neighbourhood(self):
+        self.delete() 
