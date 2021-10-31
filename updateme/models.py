@@ -14,3 +14,9 @@ class Admin(models.Model):
     def delete_admin(self):
         self.delete()
 
+class NeighbourHood(models.Model):
+    name = models.CharField(max_length=30,null=False)
+    location = models.CharField(max_length=30, null=False)
+    admin = models.ForeignKey(Admin, on_delete=CASCADE, null=True)
+    occupants_count = models.IntegerField(default=0, null=False)
+
