@@ -31,3 +31,10 @@ class NeighbourHood(models.Model):
 
     def delete_neighbourhood(self):
         self.delete() 
+
+class User(models.Model):
+    name=models.CharField(max_length=50, null=True)
+    id = models.IntegerField(primary_key=True)
+    email = models.EmailField(max_length=30,null=True)
+    neighbourhood = models.ForeignKey(NeighbourHood, on_delete=CASCADE, null=True)
+
