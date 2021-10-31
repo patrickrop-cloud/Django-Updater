@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<div class="container-fluid mt-4">
+    <div class="row ">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                   <h3>List of businesses</h3> 
+                </div>
+                <ul class="list-group list-group-flush">
+
+                    {% for business in businesses %}
+                    <li class="list-group-item">
+
+                        {{business.name}}
+                    </li>
+                    {%endfor%}
+                </ul>
+            </div>
+        </div>
+        
+
+        <div class="col-md-9  col-sm-9 col-lg-9">
+            <div class="row">
+
+                {% for business in businesses %}
+                <div class="col-md-3 mr-4">
+                    <div class="card  my-2 mr-4 ml-4" style="width: 300px;">
+                        <div class="card-body">
+
+                            <h5 class="card-title">{{business.neighbourhood.name}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Location:{{business.neighbourhood.location}}</h6>
+                            <p class="card-text">No. of Occupants:{{business.neighbourhood.occupants_count}}</p>
+                            <!-- <p class="card-text">Admin:{{business.neighbourhood.admin.name}}</p> -->
+
+
+                            <h1>Business</h1>
+                            <p class="card-text">Name:{{business.name}}</p>
+                            <p class="card-text">Email:{{business.email}}</p>
+                           
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-center text-lg-start fixed-bottom"  >
+        <!-- Copyright -->
+        <div class="text-center text-light p-3" style="background-color:rgb(52,58,64);">
+          © 2020 Copyright:
+          <a class="text-light"  href="#">Developer Patrick</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+</div>
+
+
+{% endblock %}
