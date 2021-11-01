@@ -11,18 +11,19 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+from typing import cast
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import django_heroku
-from decouple import config,Csv
+from decouple import config, Csv
 import dj_database_url
 
 
 MODE = config("MODE", default="dev")
 
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,10 +33,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t^she+2refbgt6t5pkxchpobmv509a%d+!g$i1**sa37dz20j9'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = []
 
