@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'bootstrap4',
     'updateme',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +138,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#setting configuration parameters globally
+cloudinary.config(
+  cloud_name = "drtmdaooz",
+  api_key = "941913954713361",
+  api_secret = "oR6EHcXk_0s73dNfIaGMgBq0i18",
+)
 
 #Activate Django-Heroku
 django_heroku.settings(locals())
