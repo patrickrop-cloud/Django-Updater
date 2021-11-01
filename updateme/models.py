@@ -39,8 +39,10 @@ class User(models.Model):
     neighbourhood = models.ForeignKey(NeighbourHood, on_delete=CASCADE, null=True)
 
 
-    # def __str__(self):
-    #     return self.name()
+
+    def __str__(self):
+        return self.name
+
 
     def save_user(self):
         self.save()
