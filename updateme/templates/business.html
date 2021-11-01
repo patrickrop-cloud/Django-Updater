@@ -14,7 +14,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>New Post</title>
+  <title></title>
   {{form.media}}
 
 {% block styles %} 
@@ -26,25 +26,27 @@
 
 </head>
 <body>
+  <div class="container-fluid mt-2 m-sm-3" style="background-color: aquamarine; padding-top: 8px; border-radius: 35px;">
+    <div class="row"  style="justify-content: center;">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form action="{% url 'new_business'%}" method="post"  enctype="multipart/form-data" style="width: 600px;">
 
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <form action="{% url 'new_business'%}" method="post"  enctype="multipart/form-data" style="width: 600px; margin-left: 30%; margin-top: 2%;">
-
-        {% csrf_token%}
-        {% bootstrap_form form %}
-        <div class="form-group text-center">
-          <input type="submit" class="btn btn-primary sign-up-button" value="Share">
-        </div>
-        <input type="hidden" name="next" value="{{next}}">
-      </form>
+              {% csrf_token%}
+              {% bootstrap_form form %}
+              <div class="form-group text-center">
+                <input type="submit" class="btn btn-primary sign-up-button" value="Post">
+              </div>
+              <input type="hidden" name="next" value="{{next}}">
+            </form>
     </div>
   </div>
-
    {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {% bootstrap_javascript %} {% endblock %}
-
+</div>
+</div>
+  
 </body>
 
 </html>
