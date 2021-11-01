@@ -1,60 +1,87 @@
 {% extends 'base.html'%}
 
 {% block content%}
-<div class="container-fluid mt-4">
-    <div class="row ">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-header">
-                   <h3>List of businesses</h3> 
-                </div>
-                <ul class="list-group list-group-flush">
 
-                    {% for business in businesses %}
-                    <li class="list-group-item">
-
-                        {{business.name}}
-                    </li>
-                    {%endfor%}
-                </ul>
-            </div>
-        </div>
-        
-
-        <div class="col-md-9  col-sm-9 col-lg-9">
-            <div class="row">
-
-                {% for business in businesses %}
-                <div class="col-md-3 mr-4">
-                    <div class="card  my-2 mr-4 ml-4" style="width: 300px;">
-                        <div class="card-body">
-
-                            <h5 class="card-title">{{business.neighbourhood.name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Location:{{business.neighbourhood.location}}</h6>
-                            <p class="card-text">No. of Occupants:{{business.neighbourhood.occupants_count}}</p>
-                            <!-- <p class="card-text">Admin:{{business.neighbourhood.admin.name}}</p> -->
-
-
-                            <h1>Business</h1>
-                            <p class="card-text">Name:{{business.name}}</p>
-                            <p class="card-text">Email:{{business.email}}</p>
-                           
+<div class="container-fluid mt-4" style="background-color: aquamarine; padding-top: 8px; border-radius: 20px;">
+    <div class="container-fluid mt-4">
+        <div class="row ">
+            <div class="col-md-3">
+                <form class="card card-sm ml-4 ">
+                    <div class="card-body row no-gutters align-items-center">
+                        <div class="col">
+                            <input type="search" name='item_name' placeholder="Search for Business"
+                                class="form-control form-control">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-success" type="submit">Search</button>
                         </div>
                     </div>
+                </form>
+    </div>
+    </div>
 
+    <!-- <div class="container" style="padding-top: 8px; background-color: rgb(110, 155, 194); border-radius: 20px;">
+        <div class="container ">
+            <div class="row" style="padding-top: 8px; margin-left: 5px;">
+                <form class="card card-sm ">
+                    <div class="card-body row no-gutters align-items-center">
+                        <div class="col">
+                            <input type="search" name='item_name' placeholder="Enter keyword"
+                                class="form-control form-control">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div> -->
+    <div class="container-fluid mt-4">
+        <div class="row ">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        
+                       <h2>List of businesses</h2> 
+                    </div>
+                    <ul class="list-group list-group-flush">
+    
+                        {% for business in businesses %}
+                        <li class="list-group-item">
+    
+                            {{business.name}}
+    
+                        </li>
+                        {%endfor%}
+                    </ul>
                 </div>
-                {% endfor%}
+            </div>
+            <div class="col-md-9  col-sm-9 col-lg-9">
+                <div class="row">
+    
+                    {% for business in businesses %}
+                    <div class="col-md-3 mr-4">
+                        <div class="card  my-2 mr-4 ml-4" style="width: 300px;">
+                            <div class="card-body">
+                                <h3 class="card-title">{{business.neighbourhood.name}}</h3>
+                                <h6 class="card-subtitle mb-2 text-muted">Location:{{business.neighbourhood.location}}</h6>
+                                <p class="card-text">Occupancy:{{business.neighbourhood.occupants_count}}</p>
+                                <h2>Business</h2>
+                                <p class="card-text">Name:{{business.name}}</p>
+                                <p class="card-text">Email:{{business.email}}</p>                  
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor%}
+                </div>
             </div>
         </div>
+        <footer class="bg-dark text-center text-lg-start fixed-bottom"  >
+            <div class="text-center text-light p-3" style="background-color:rgb(52,58,64);">
+              © 2021 Copyright:
+              <a class="text-light"  href="#">Developer Patrick</a>
+            </div>
+          </footer>
     </div>
-    <footer class="bg-dark text-center text-lg-start fixed-bottom"  >
-        <!-- Copyright -->
-        <div class="text-center text-light p-3" style="background-color:rgb(52,58,64);">
-          © 2020 Copyright:
-          <a class="text-light"  href="#">Developer Patrick</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
 </div>
 
 

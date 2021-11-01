@@ -28,18 +28,17 @@
                     <a href="{% url 'new_business'%}" style="color: white;" class="nav-item nav-link"><h4>Post Business</h4></a>
                 </div>
     
-                <form class="card card-sm ml-4 ">
+                <!-- <form class="card card-sm ml-4 ">
                     <div class="card-body row no-gutters align-items-center">
                         <div class="col">
                             <input type="search" name='item_name' placeholder="Search for Business"
                                 class="form-control form-control">
-    
                         </div>
                         <div class="col-auto">
                             <button class="btn btn-success" type="submit">Search</button>
                         </div>
                     </div>
-                </form>
+                </form> -->
                 <div class="navbar-nav ml-auto  ">
     
                     <a href="{% url 'profile' %}" style="color: white;" class="nav-item nav-link mr-sm-2">Profile</a>
@@ -47,6 +46,12 @@
                     <a href="{% url 'logout' %}" style="color: white;" class="nav-item nav-link">Logout</a>
             </div>
         </nav>
+        <footer class="bg-dark text-center text-lg-start fixed-bottom"  >
+            <div class="text-center text-light p-3" style="background-color:rgb(52,58,64);">
+              © 2021 Copyright:
+              <a class="text-light"  href="#">Developer Patrick</a>
+            </div>
+          </footer>
     {% endblock%}
     </div>
 </body>
